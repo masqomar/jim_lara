@@ -32,7 +32,7 @@
     <!-- ------------------------ Mobile Header Section ------------------------ -->
     <nav class="navbar navbar-light bg-white d-block d-sm-block d-md-block d-lg-none py-3 border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">🍣 Restawrant</a>
+            <a class="navbar-brand fw-bold" href="#">🍣 JIM INN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,8 +64,7 @@
                     </ul>
                     <hr />
                     <div class="d-grid gap-2">
-                        <button class="btn btn-warning text-white me-2 px-5 fw-500" onclick="location.href='http://127.0.0.1:8000/reservation/step-one'" type="button"> <i class="fas fa-calendar-plus"></i> &nbsp; &nbsp; Buat
-                            Reservasi</button>
+                        <button class="btn btn-warning text-white me-2 px-5 fw-500" onclick="location.href='{{route('login')}}'" type="button"> <i class="fas fa-calendar-plus"></i> &nbsp; &nbsp; Login</button>
                     </div>
                 </div>
             </div>
