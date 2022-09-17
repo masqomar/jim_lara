@@ -32,11 +32,9 @@
                                 </td>
                                 <td><input type="number" name="nominal_topup" value="10000" class="form-control"></td>
                                 <td>
-                                    <select class="form-control" name="user_id">
+                                    <select class="form-control" name="keterangan">
                                         <option value="Voucher Bulanan" selected>Voucher Bulanan</option>
-                                        @foreach($users as $user)
                                         <option value="Topup Cash">Topup Cash / TF</option>
-                                        @endforeach
                                     </select>
                                 </td>
 
