@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Top Up Bulanan')
+@section('title', 'Top Up Anggota')
 
 @section('content_header')
-<h1 class="m-0 text-dark">Top Up Bulanan</h1>
+<h1 class="m-0 text-dark">Top Up Anggota</h1>
 @stop
 
 @section('content')
@@ -31,7 +31,14 @@
                                     </select>
                                 </td>
                                 <td><input type="number" name="nominal_topup" value="10000" class="form-control"></td>
-                                <td><input type="text" name="keterangan" value="Voucher Bulanan" class="form-control" required></td>
+                                <td>
+                                    <select class="form-control" name="user_id">
+                                        <option value="Voucher Bulanan" selected>Voucher Bulanan</option>
+                                        @foreach($users as $user)
+                                        <option value="Topup Cash">Topup Cash / TF</option>
+                                        @endforeach
+                                    </select>
+                                </td>
 
                             </tr>
                         </tbody>
