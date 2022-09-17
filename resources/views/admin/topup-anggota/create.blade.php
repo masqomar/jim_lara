@@ -25,29 +25,22 @@
                         <table class="table table-bordered">
                             <thead>
                                 <th>Nama Anggota</th>
-                                <th>Nominal Topup</th>
-                                <th style="text-align: center" onclick="addRow()">
-                                    <a href="#" class="btn btn-success">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </th>
+                                <th>Nominal</th>
+                                <th>Keterangan</th>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <select class="form-control" name="user_id[]">
+                                        <select class="form-control" name="user_id">
                                             <option value="" selected disabled>Pilih Anggota</option>
-                                            @foreach($anggotaAll as $anggota)
-                                            <option value="{{$anggota->id}}">{{$anggota->nama}}</option>
+                                            @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->nama}}</option>
                                             @endforeach
                                         </select>
                                     </td>
-                                    <td><input type="number" name="nominal_topup[]" value="10000" class="form-control"></td>
-                                    <td style="text-align: center" onclick="cannotdelete()">
-                                        <a href="#" class="btn btn-danger remove">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </td>
+                                    <td><input type="number" name="nominal_topup" value="10000" class="form-control"></td>
+                                    <td><input type="text" name="keterangan" value="Voucher Bulanan" class="form-control" required></td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -61,34 +54,3 @@
             </div>
         </div>
         @stop
-
-        @push('js')
-        <script>
-            function addRow() {
-                var tr = '<tr>' +
-                    '<td>' +
-                    '<select class="form-control" name="user_id[]">' +
-                    '<option value="" selected disabled>Pilih Anggota</option>' +
-                    '@foreach($anggotaAll as $anggota)' +
-                    '<option value="{{$anggota->id}}">{{$anggota->nama}}</option>' +
-                    '@endforeach' +
-                    '</select>' +
-                    '</td>' +
-                    '<td><input type="number" name="nominal_topup[]" value="10000" class="form-control"></td>' +
-                    '<td class="remove" style="text-align: center"><a href="#" class="btn btn-danger" onclick="deleteRow()"><i class="fa fa-times"></i></a></td>' +
-                    '</tr>';
-
-                $('tbody').append(tr);
-            }
-
-            function deleteRow() {
-                $(document).on('click', '.remove', function() {
-                    $(this).parent('tr').remove();
-                });
-            }
-
-            function cannotdelete() {
-                alert('You cannot delete the first row!!!')
-            }
-        </script>
-        @endpush

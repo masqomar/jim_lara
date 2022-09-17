@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\KasMasukController;
 use App\Http\Controllers\Admin\KodeAkunController;
 use App\Http\Controllers\Admin\PayLaterController;
 use App\Http\Controllers\Admin\PayLaterProviderController;
+use App\Http\Controllers\Admin\PDFSimpananAnggotaController;
 use App\Http\Controllers\Admin\PembiayaanAnggotaController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProdukKoperasiController;
@@ -79,6 +80,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('simpanan-sukarela/cairkan/{id}', [SimpananSukarelaController::class, 'cairkanSimpanan'])->name('admin.simpanan-sukarela.cairkan');
     Route::post('simpanan-sukarela/storePencairan', [SimpananSukarelaController::class, 'storePencairan'])->name('admin.simpanan-sukarela.storePencairan');
 
+    Route::get('simpanan-sukarela/pdf', [PDFSimpananAnggotaController::class, 'PDFsimpananAnggota'])->name('admin.simpanan-sukarela.pdf');
     //Anggota
     Route::get('sim-wajib', [AnggotaSimpananWajibController::class, 'index'])->name('anggota.sim-wajib.index');
     Route::get('sim-wajib/show/{id}', [AnggotaSimpananWajibController::class, 'show'])->name('anggota.sim-wajib.show');
