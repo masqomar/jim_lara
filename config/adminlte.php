@@ -374,6 +374,11 @@ return [
             'icon'    => 'fa fa-credit-card',
         ],
         [
+            'text'    => 'Syarat Ketentuan',
+            'url'     => '/syarat-ketentuan',
+            'icon'    => 'fa fa-credit-card',
+        ],
+        [
             'text'    => 'Paylater',
             'url'     => '/paylater-anggota',
             'icon'    => 'fas fa-handshake',
