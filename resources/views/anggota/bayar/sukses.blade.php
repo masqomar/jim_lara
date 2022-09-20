@@ -4,18 +4,23 @@
 <div class="order-success-wrapper">
     <div class="custom-container">
         <div class="order-done-content">
-
-            <h6 class="card-text lead">suksesss</h6>
-            <h6 class="card-text">kembaali</h6>
-
-
-
-            <script>
-                if (window.history.replaceState) {
-                    window.history.replaceState(null, null, window.location.href);
-                }
-            </script>
+            <br>
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+                <br>
+                <h6>
+                    <a class="btn btn-sm btn-warning text-center" href="{{route('home')}}" role="button">Kembali</a>
+                </h6>
+            </div>
+            @endif
         </div>
+
+        <br>
+        <br>
+        <br>
+
+
     </div>
 </div>
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AngsuranController;
+use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\JenisProdukController;
 use App\Http\Controllers\Admin\KasKeluarController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProdukKoperasiController;
 use App\Http\Controllers\Admin\SimpananSukarelaController;
 use App\Http\Controllers\Admin\SimpananWajibController;
+use App\Http\Controllers\Admin\SyaratKetentuanController;
 use App\Http\Controllers\Admin\TopUpAnggotaController;
 use App\Http\Controllers\Anggota\AnggotaPayLaterController;
 use App\Http\Controllers\Anggota\BayarController;
@@ -66,8 +68,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('angsuran/detail/{id}', [AngsuranController::class, 'detail'])->name('admin.angsuran.detail');
     Route::resource('topup-anggota', TopUpAnggotaController::class);
     Route::resource('gallery', GalleryController::class);
+    Route::resource('bank', BankController::class);
     Route::resource('paylater-provider', PayLaterProviderController::class);
     Route::resource('paylater-anggota', PayLaterController::class);
+    Route::resource('syarat-ketentuan', SyaratKetentuanController::class);
 
     Route::get('simpanan-wajib', [SimpananWajibController::class, 'index'])->name('admin.simpanan-wajib.index');
     Route::get('simpanan-wajib/export', [SimpananWajibController::class, 'export'])->name('admin.simpanan-wajib.export');
@@ -122,7 +126,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('paylater', [AnggotaPayLaterController::class, 'index'])->name('anggota.paylater.index');
     Route::get('paylater/create', [AnggotaPayLaterController::class, 'create'])->name('anggota.paylater.create');
     Route::post('paylater/store', [AnggotaPayLaterController::class, 'store'])->name('anggota.paylater.store');
-    Route::get('paylater/show', [AnggotaPayLaterController::class, 'show'])->name('anggota.paylater.show');
+    Route::get('paylater/show/{id}', [AnggotaPayLaterController::class, 'show'])->name('anggota.paylater.show');
 
     Route::get('profile', [AnggotaProfilController::class, 'index'])->name('anggota.profile.index');
 

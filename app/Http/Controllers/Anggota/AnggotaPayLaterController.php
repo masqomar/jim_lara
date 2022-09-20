@@ -66,4 +66,12 @@ class AnggotaPayLaterController extends Controller
         return redirect()->route('anggota.paylater.index')
             ->with('success', 'Berhasil mengajukan paylater');
     }
+
+    public function show($id)
+    {
+        $detailPaylaters = PayLater::where('id', $id)->where('user_id', Auth::user()->id)->get();
+
+
+        return view('anggota.paylater.show', compact('detailPaylaters'));
+    }
 }

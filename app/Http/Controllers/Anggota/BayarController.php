@@ -91,7 +91,7 @@ class BayarController extends Controller
                     ]);
             });
             return redirect()->route('anggota.bayar.sukses')
-                ->with('success', 'Pembayaran Sukses');
+                ->with('success', 'Pembayaran Ke   ' . $namaPenerima . '  sebesar   ' . $nominal_bayar . '  berhasil');
         } else {
             return redirect()->back()
                 ->with('error', 'Saldo tidak mencukupi');
