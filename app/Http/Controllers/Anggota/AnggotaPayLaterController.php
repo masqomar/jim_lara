@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bank;
 use App\Models\PayLater;
 use App\Models\PayLaterProvider;
+use App\Models\SyaratKetentuan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,8 +31,9 @@ class AnggotaPayLaterController extends Controller
     {
         $providerID = PayLaterProvider::get();
         $bankID = Bank::get();
+        $snk = SyaratKetentuan::where('id', 1)->get();
 
-        return view('anggota.paylater.create', compact('providerID', 'bankID'));
+        return view('anggota.paylater.create', compact('providerID', 'bankID', 'snk'));
     }
 
     public function store(Request $request)

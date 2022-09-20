@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SyaratKetentuan extends Model
 {
     use HasFactory;
-    protected $table = 'produk_koperasi';
+    protected $table = 'syarat_ketentuan';
 
     public $timestamps = false;
 

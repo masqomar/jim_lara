@@ -27,4 +27,27 @@ class SyaratKetentuanController extends Controller
     {
         return view('admin.syarat-ketentuan.create');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'judul' => 'required|string',
+            'deskripsi' => 'required',
+        ]);
+
+        SyaratKetentuan::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+        ]);
+
+        return redirect()->route('syarat-ketentuan.index')
+            ->with('success_message', 'Berhasil menambah syarat ketentuan');
+    }
+
+    public function show($id)
+    {
+        $snk = SyaratKetentuan::where('id', $id)->get();
+
+        return view('admin.syarat-ketentuan.show', compact('snk'));
+    }
 }

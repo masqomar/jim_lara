@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$snk->judul}}</td>
-                            <td>{{$snk->deskripsi}}</td>
+                            <td>{{Str::limit( strip_tags($snk->deskripsi), 50 )}}</td>
                             <td>
                                 @can('syarat-ketentuan-edit')
                                 <a href="{{route('syarat-ketentuan.edit', $snk)}}" class="btn btn-primary btn-xs">
