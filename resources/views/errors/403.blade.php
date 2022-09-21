@@ -5,102 +5,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Forbidden Access</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
 
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
             box-sizing: border-box;
-            font-family: 'Press Start 2P';
-            color: #FFFFFF;
-            text-align: center;
+            color: inherit;
         }
 
         body {
-            background-color: #000000;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='58' viewBox='0 0 42 58'%3E%3Cg fill='%23dddcdd' fill-opacity='0.23'%3E%3Cpath fill-rule='evenodd' d='M12 18h12v18h6v4H18V22h-6v-4zm-6-2v-4H0V0h36v6h6v36h-6v4h6v12H6v-6H0V16h6zM34 2H2v8h24v24h8V2zM6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 50h32v-8H10V18H2v32zm28-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        section.notFound {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 5%;
+            background-image: linear-gradient(120deg, #4f0088 0%, #000000 100%);
             height: 100vh;
         }
 
-        section.notFound h1 {
-            color: red;
-            font-size: 100px;
+        h1 {
+            font-size: 45vw;
+            text-align: center;
+            position: fixed;
+            width: 100vw;
+            z-index: 1;
+            color: #ffffff26;
+            text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: "Montserrat", monospace;
         }
 
-        section.notFound h2 {
-            font-size: 50px;
+        div {
+            background: rgba(0, 0, 0, 0);
+            width: 70vw;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 auto;
+            padding: 30px 30px 10px;
+            box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+            z-index: 3;
         }
 
-        section.notFound h1,
-        h2,
-        h3 {
-            margin-bottom: 40px;
+        P {
+            font-family: "Share Tech Mono", monospace;
+            color: #f5f5f5;
+            margin: 0 0 20px;
+            font-size: 17px;
+            line-height: 1.2;
         }
 
-        div.text {
-            height: 50vh;
+        span {
+            color: #f0c674;
         }
 
-        div.text a {
+        i {
+            color: #8abeb7;
+        }
+
+        div a {
             text-decoration: none;
-            margin-right: 20px;
         }
 
-        div.text a:hover {
-            color: red;
-            text-decoration: underline;
+        b {
+            color: #81a2be;
         }
 
-        @media only screen and (max-width: 768px) {
-            section.notFound {
-                flex-direction: column;
-                justify-content: space-around;
+        a.avatar {
+            position: fixed;
+            bottom: 15px;
+            right: -100px;
+            animation: slide 0.5s 4.5s forwards;
+            display: block;
+            z-index: 4
+        }
+
+        a.avatar img {
+            border-radius: 100%;
+            width: 44px;
+            border: 2px solid white;
+        }
+
+        @keyframes slide {
+            from {
+                right: -100px;
+                transform: rotate(360deg);
+                opacity: 0;
             }
 
-            section.notFound div.img img {
-                width: 70vw;
-                height: auto;
-            }
-
-            section.notFound h1 {
-                font-size: 50px;
-            }
-
-            section.notFound h2 {
-                font-size: 25px;
-            }
-
-            div.text a:active {
-                color: red;
-                text-decoration: underline;
+            to {
+                right: 15px;
+                transform: rotate(0deg);
+                opacity: 1;
             }
         }
     </style>
 </head>
 
 <body>
-    <section class="notFound">
-        <div class="img">
-            <img src="https://assets.codepen.io/5647096/backToTheHomepage.png" alt="Back to the Homepage" />
-            <img src="https://assets.codepen.io/5647096/Delorean.png" alt="El Delorean, El Doc y Marti McFly" />
-        </div>
-        <div class="text">
-            <h1>404</h1>
-            <h2>PAGE NOT FOUND</h2>
-            <h3>BACK TO HOME?</h3>
-            <a href="{{route('home')}}" class="yes">YES</a>
-            <a href="">NO</a>
-        </div>
-    </section>
+    <h1>403</h1>
+    <div>
+        <p>> <span>ERROR CODE</span>:
+            <br>"<i>HTTP 403 Forbidden</i>"
+        </p>
+        <p>> <span>ERROR DESCRIPTION</span>:
+            <br>"<i>Access Denied. You Do Not Have The Permission To Access This Page On This Server</i>"
+        </p>
+        <p>> <span>ERROR POSSIBLY CAUSED BY</span>:
+            <br>[<b>OJO MBLARAH RENE MANEH YA.......!!!!</b>...]
+        </p>
+        <p>> <span>SOME PAGES ON THIS SERVER THAT YOU DO HAVE PERMISSION TO ACCESS</span>:
+            <br>[<a href="/home">Home</a>, <a href="/">Main</a></a>...]
+        </p>
+        <p>> <span>HAVE A NICE DAY JIMen Sekalian :-)</span></p>
+    </div>
+
+    <a class="avatar" href="https://codepen.io/leenalavanya/" title="If you liked this pen, don't forget to heart, share and follow ❤"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/157344/profile/profile-512.jpg?1535437978" /></a>
+
+    <script>
+        var str = document.getElementsByTagName('div')[0].innerHTML.toString();
+        var i = 0;
+        document.getElementsByTagName('div')[0].innerHTML = "";
+
+        setTimeout(function() {
+            var se = setInterval(function() {
+                i++;
+                document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
+                if (i == str.length) {
+                    clearInterval(se);
+                    document.getElementsByTagName('div')[0].innerHTML = str;
+                }
+            }, 10);
+        }, 0);
+    </script>
 </body>
 
 </html>

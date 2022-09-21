@@ -33,9 +33,12 @@
                             <td>{{$snk->judul}}</td>
                             <td>{{Str::limit( strip_tags($snk->deskripsi), 50 )}}</td>
                             <td>
+                                <a href="{{route('syarat-ketentuan.show', $snk->id)}}" class="btn btn-info btn-xs">
+                                    Detail
+                                </a>
                                 @can('syarat-ketentuan-edit')
                                 <a href="{{route('syarat-ketentuan.edit', $snk)}}" class="btn btn-primary btn-xs">
-                                    Proses
+                                    Edit
                                 </a>
                                 @endcan
                                 @can('syarat-ketentuan-delete')
@@ -44,9 +47,7 @@
                                 </a>
                                 @endcan
 
-                                <a href="{{route('syarat-ketentuan.show', $snk->id)}}" class="btn btn-info btn-xs">
-                                    Detail
-                                </a>
+
                             </td>
                         </tr>
                         @endforeach

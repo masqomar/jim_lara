@@ -39,7 +39,7 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$SimpananSukarela->user_id}}</td>
-                            <td>{{$SimpananSukarela->produk_id}}</td>
+                            <td>{{$SimpananSukarela->produkKoperasi->nama_produk}}</td>
                             <td>@rupiah($SimpananSukarela->jumlah)</td>
                             <td>{{$SimpananSukarela->periode_bulan}}</td>
                             <td>{{$SimpananSukarela->periode_tahun}}</td>

@@ -71,6 +71,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('bank', BankController::class);
     Route::resource('paylater-provider', PayLaterProviderController::class);
     Route::resource('paylater-anggota', PayLaterController::class);
+    Route::get('paylater-anggota/angsuran/{id}', [PayLaterController::class, 'angsuran'])->name('admin.paylater-anggota.angsuran');
+    Route::post('paylater-anggota/storeAngsuran', [PayLaterController::class, 'storeAngsuran'])->name('admin.paylater-anggota.storeAngsuran');
     Route::resource('syarat-ketentuan', SyaratKetentuanController::class);
 
     Route::get('simpanan-wajib', [SimpananWajibController::class, 'index'])->name('admin.simpanan-wajib.index');

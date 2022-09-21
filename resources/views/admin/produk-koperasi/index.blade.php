@@ -37,7 +37,7 @@
                             </td>
                             <td>{{$produk->nama_produk}}</td>
                             <td>{{$produk->jenisProduk->jenis_produk}}</td>
-                            <td>{{$produk->desk_produk}}</td>
+                            <td>{{Str::limit( strip_tags($produk->desk_produk), 70 )}}</td>
                             <td>@can('produk-koperasi-edit')
                                 <a href="{{route('produk-koperasi.edit', $produk)}}" class="btn btn-primary btn-xs">
                                     Edit

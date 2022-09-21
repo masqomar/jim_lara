@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\PayLater;
+use App\Models\PembiayaanAnggota;
+use App\Models\TransaksiPembiayaanAnggota;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PayLaterController extends Controller
@@ -12,7 +15,7 @@ class PayLaterController extends Controller
     {
         $this->middleware('permission:paylater-list|paylater-create|paylater-edit|paylater-delete', ['only' => ['index', 'store']]);
         $this->middleware('permission:paylater-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:paylater-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:paylater-edit', ['only' => ['edit', 'update', 'angsuran']]);
         $this->middleware('permission:paylater-delete', ['only' => ['destroy']]);
     }
 
@@ -54,5 +57,42 @@ class PayLaterController extends Controller
 
         return redirect()->route('paylater-anggota.index')
             ->with('success_message', 'Berhasil membayar paylater anggota');
+    }
+
+    public function angsuran($id)
+    {
+        $angsuran = PayLater::findOrFail($id);
+        $cicilan = TransaksiPembiayaanAnggota::where('kode_pembiayaan', $angsuran->kode_paylater)->groupBy('kode_pembiayaan')->sum('setor_bayar');
+
+        return view('admin.paylater-anggota.angsuran', compact('angsuran', 'cicilan'));
+    }
+
+    public function storeAngsuran(Request $request)
+    {
+        $request->validate([
+            'kode_paylater' => 'required|string',
+            'user_id' => 'required|numeric',
+            'setor_bayar' => 'required|numeric',
+            'keterangan_setor' => 'required|string|max:255',
+            'pelunasan' => 'required|string|max:255'
+        ]);
+
+        $pelunasan = $request->pelunasan;
+
+        TransaksiPembiayaanAnggota::create([
+            'kode_pembiayaan' => $request->kode_paylater,
+            'user_id' => $request->user_id,
+            'setor_bayar' => $request->setor_bayar,
+            'keterangan_setor' => $request->keterangan_setor,
+            'tgl_bayar' => Carbon::now()
+        ]);
+
+        PayLater::where('kode_paylater', $request->kode_paylater)
+            ->update([
+                'status' => $pelunasan
+            ]);
+
+        return redirect()->route('paylater-anggota.index')
+            ->with('success_message', 'Berhasil menambahkan angsuran paylater');
     }
 }

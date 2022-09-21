@@ -51,7 +51,15 @@
                                 </a>
                                 @endcan
                                 @endif
+
                                 @if ($paylater->status == 'Dibayar')
+                                @can('paylater-edit')
+                                <a href="{{route('admin.paylater-anggota.angsuran', $paylater->id)}}" class="btn btn-secondary btn-xs">
+                                    Angsuran
+                                </a>
+                                @endcan
+                                @endif
+                                @if ($paylater->status == 'Lunas')
                                 <a href="{{route('paylater-anggota.show', $paylater->id)}}" class="btn btn-info btn-xs">
                                     Detail
                                 </a>

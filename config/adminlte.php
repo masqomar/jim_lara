@@ -318,6 +318,16 @@ return [
                     'url'  => '/produk-koperasi',
                 ],
             ],
+            [
+                'text'    => 'Syarat Ketentuan',
+                'url'     => '/syarat-ketentuan',
+                'icon'    => 'fa fa-credit-card',
+            ],
+            [
+                'text'    => 'Gallery',
+                'url'     => '/gallery',
+                'icon'    => 'fa fa-image',
+            ],
         ],
         [
             'text'    => 'Simpanan Anggota',
@@ -362,46 +372,51 @@ return [
                     ],
                 ],
                 [
-                    'text' => 'Topup Anggota',
-                    'icon'    => 'fas fa-hand-holding-usd',
-                    'url'  => '/topup-anggota',
+                    'text'    => 'Pembiayaan',
+                    'url'     => '#',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'submenu' => [
+                        [
+                            'text'    => 'Data Pembiayaan',
+                            'url'     => '/pembiayaan',
+                            'icon'    => 'fa fa-credit-card',
+                        ],
+                        [
+                            'text'    => 'Angsuran Pembiayaan',
+                            'url'     => '/angsuran',
+                            'icon'    => 'fas fa-money-bill-wave-alt',
+                        ],
+                    ],
                 ],
+                [
+                    'text'    => 'PayLater',
+                    'url'     => '#',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'submenu' => [
+                        [
+                            'text'    => 'Provider PayLater',
+                            'url'     => '/paylater-provider',
+                            'icon'    => 'fas fa-money-bill-wave-alt',
+                        ],
+                        [
+                            'text'    => 'Bank Provider',
+                            'url'     => '/bank',
+                            'icon'    => 'fas fa-money-bill-wave-alt',
+                        ],
+                        [
+                            'text'    => 'Paylater',
+                            'url'     => '/paylater-anggota',
+                            'icon'    => 'fas fa-handshake',
+                        ],
+                    ],
+                ],
+
             ],
         ],
         [
-            'text'    => 'Pembiayaan',
-            'url'     => '/pembiayaan',
-            'icon'    => 'fa fa-credit-card',
-        ],
-        [
-            'text'    => 'Syarat Ketentuan',
-            'url'     => '/syarat-ketentuan',
-            'icon'    => 'fa fa-credit-card',
-        ],
-        [
-            'text'    => 'Paylater',
-            'url'     => '/paylater-anggota',
-            'icon'    => 'fas fa-handshake',
-        ],
-        [
-            'text'    => 'Provider',
-            'url'     => '/paylater-provider',
-            'icon'    => 'fas fa-money-bill-wave-alt',
-        ],
-        [
-            'text'    => 'Bank',
-            'url'     => '/bank',
-            'icon'    => 'fas fa-money-bill-wave-alt',
-        ],
-        [
-            'text'    => 'Angsuran',
-            'url'     => '/angsuran',
-            'icon'    => 'fas fa-money-bill-wave-alt',
-        ],
-        [
-            'text'    => 'Gallery',
-            'url'     => '/gallery',
-            'icon'    => 'fa fa-image',
+            'text' => 'Topup Anggota',
+            'icon'    => 'fas fa-hand-holding-usd',
+            'url'  => '/topup-anggota',
         ],
 
         ['header' => 'MANAGEMENT USER'],

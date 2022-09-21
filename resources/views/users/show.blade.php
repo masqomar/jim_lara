@@ -44,10 +44,6 @@
                         <h3>@rupiah($totalSimpananWajib)</h3>
                         <p>Total Simpanan Wajib</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -57,10 +53,6 @@
                         <h3>@rupiah($totalSimpananSukarela)</h3>
                         <p>Total Simpanan Sukarela</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -70,10 +62,6 @@
                         <h3>@rupiah($totalTopUpAnggota)</h3>
                         <p>Total TopUp Anggota</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -83,10 +71,6 @@
                         <h3>@rupiah($totalTopUpSukarela)</h3>
                         <p>Total TopUp Sukarela</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -96,23 +80,15 @@
                         <h3>@rupiah($totalTransaksiPembelian)</h3>
                         <p>Total Transaksi Pembelian</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-olive">
                     <div class="inner">
-                        <h3>@rupiah($totalTransaksiDonasi)</h3>
-                        <p>Total Donasi</p>
+                        <h3>10000</h3>
+                        <p>Total Pembiayaan</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -122,10 +98,6 @@
                         <h3>@rupiah($totalTransaksiTransfer)</h3>
                         <p>Total Transaksi Transfer</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -135,10 +107,6 @@
                         <h3>@rupiah($totalTransaksiTarik)</h3>
                         <p>Total Transaksi Tarik</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#setoran" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -148,10 +116,15 @@
                         <h3>@rupiah($prosesTarikSimpanan)</h3>
                         <p>SEGERA DIPROSES YA BOS...</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-olive">
+                    <div class="inner">
+                        <h3>@rupiah($totalTransaksiDonasi)</h3>
+                        <p>Total Donasi</p>
                     </div>
-                    <a href="" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>

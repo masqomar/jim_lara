@@ -50,4 +50,34 @@ class SyaratKetentuanController extends Controller
 
         return view('admin.syarat-ketentuan.show', compact('snk'));
     }
+
+    public function edit($id)
+    {
+        $snk = SyaratKetentuan::findOrFail($id);
+
+        return view('admin.syarat-ketentuan.edit', compact('snk'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'judul' => 'required|string',
+            'deskripsi' => 'required',
+        ]);
+
+        $input = $request->all();
+        $snk = SyaratKetentuan::find($id);
+        $snk->update($input);
+
+        return redirect()->route('syarat-ketentuan.index')
+            ->with('success_message', 'Berhasil mengubah syarat ketentuan');
+    }
+
+    public function destroy(SyaratKetentuan $syaratKetentuan)
+    {
+        $syaratKetentuan->delete();
+
+        return redirect()->route('syarat-ketentuan.index')
+            ->with('success_message', 'Berhasil menghapus syarat ketentuan');
+    }
 }
